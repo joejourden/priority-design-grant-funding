@@ -39,9 +39,12 @@ Grants are indexed by merit position, and cost bounds and eligibility are
 assigned to each position independently; in the code, index 0 is the paper's
 grant 1, the highest-merit grant. The axioms refer to grants
 only through their data and the merit order, so every problem of these dimensions
-is a relabeling of exactly one problem in this class: fixing the order is without
+with positive floors is a relabeling of exactly one problem in this class: fixing the order is without
 loss, and all counts below are of problems up to relabeling of grants (a count over
-labeled rankings would be $|I|!$ times larger with no new problems).
+labeled rankings would be $|I|!$ times larger with no new problems). Zero floors are
+excluded: a category with no floor never binds Axiom C\*, but its eligibility still
+enters the comparisons of Axiom B, so problems with such a category lie outside the
+class searched.
 
 For each problem the search then enumerates every integral allocation
 $\xi_i \in \{0\} \cup [\underline{b}_i, \overline{b}_i]$ within budget. A problem
@@ -196,8 +199,9 @@ needed anywhere.
 **Integer data covers the commensurable case.** The axioms are invariant to a
 common rescaling of $\mathcal{B}$, the cost bounds and the floors. So a problem
 whose data are rational, after clearing denominators, *is* one of the integer
-problems in the class — provided its rescaled budget falls within the bound
-searched. Clearing denominators inflates $\mathcal{B}$, which is the real
+problems in the class — provided its rescaled budget is exactly the budget
+searched for its numbers of grants and categories. Smaller budgets are not
+enumerated. Clearing denominators inflates $\mathcal{B}$, which is the real
 limitation: a problem with fine-grained data rescales to a budget past anything
 enumerable. Problems with irrationally-related data are outside the class
 altogether, and no finite search reaches them.
